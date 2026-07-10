@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #3AB8CC;
+  --color-dark: #1A1A1A;
+  --color-white: #FFFFFF;
+  --color-accent: #C9A24B;
+  --color-bg-warm: #F7F5F0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+::selection {
+  background: rgba(58, 184, 204, 0.25);
+}
+
+.article-body h2,
+.article-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-body p,
+.article-body li {
+  font-family: 'Inter', sans-serif;
+}
+
+.article-body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+}

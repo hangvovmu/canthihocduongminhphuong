@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { getCollection, render } from 'astro:content';
+import { format } from 'date-fns';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('kien-thuc');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const relatedArticles = (await getCollection('kien-thuc'))
+  .filter((article) => article.slug !== entry.slug)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <Header />
+  <main class="px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">{entry.data.category}</p>
+      <h1 class="mt-4 text-4xl font-semibold text-dark sm:text-5xl">{entry.data.title}</h1>
+      <p class="mt-4 text-sm text-slate-500">{format(entry.data.pubDate, 'dd/MM/yyyy')}</p>
+      <div class="article-body prose prose-lg prose-slate mt-10 max-w-none">
+        <Content />
+      </div>
+
+      <div class="mt-16 rounded-[2rem] border border-slate-200 bg-bg-warm p-8 text-center">
+        <p class="text-lg text-slate-700">Có thắc mắc về tình trạng mắt của con? Liên hệ Phòng Khám Minh Phương để được tư vấn.</p>
+        <a href="tel:0911839678" class="focus-ring mt-4 inline-flex rounded-full bg-accent px-6 py-3 font-semibold text-white">Gọi ngay</a>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="text-2xl font-semibold text-dark">Bài viết liên quan</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          {relatedArticles.map((article) => (
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">{article.data.category}</p>
+              <a href={`/kien-thuc/${article.slug}`} class="focus-ring mt-3 block text-xl font-semibold text-dark hover:text-primary">{article.data.title}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+  <ContactCTA />
+</BaseLayout>

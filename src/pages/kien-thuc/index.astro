@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('kien-thuc')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const categories = ['Kiểm soát cận thị', 'Chăm sóc mắt học đường', 'Kính mắt & kính áp tròng', 'Hỏi đáp phụ huynh'];
+---
+
+<BaseLayout title="Kiến thức" description="Bài viết kiến thức về cận thị học đường, chăm sóc mắt và giải pháp kiểm soát cận thị cho học sinh.">
+  <Header />
+  <main>
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">KIẾN THỨC CẬN THỊ</p>
+        <h1 class="mt-4 max-w-3xl text-4xl font-semibold text-dark sm:text-5xl">Kiến thức cận thị học đường</h1>
+        <p class="mt-6 max-w-3xl text-lg text-slate-700">Kênh cập nhật kiến thức đáng tin cậy, dễ hiểu về cận thị và chăm sóc mắt cho học sinh, giúp phụ huynh đồng hành cùng con một cách khoa học.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          {categories.map((category) => (
+            <span class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700">{category}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {articles.map((article) => <ArticleCard entry={article} />)}
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ContactCTA />
+</BaseLayout>

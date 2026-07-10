@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TeamCard from '../components/TeamCard.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+---
+
+<BaseLayout title="Giới thiệu" description="Giới thiệu về Phòng Khám Mắt Cận Thị Học Đường Minh Phương, sứ mệnh và đội ngũ chuyên môn.">
+  <Header />
+  <main>
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">GIỚI THIỆU</p>
+        <h1 class="mt-4 max-w-3xl text-4xl font-semibold text-dark sm:text-5xl">Đồng hành cùng đôi mắt sáng khỏe của học sinh Nghệ An</h1>
+        <p class="mt-6 max-w-3xl text-lg text-slate-700">Phòng Khám Mắt Cận Thị Học Đường Minh Phương được thành lập với sứ mệnh chuyên biệt: kiểm soát và làm chậm tiến triển cận thị cho học sinh — nhóm đối tượng đang gia tăng tỷ lệ cận thị nhanh do áp lực học tập và thiết bị điện tử.</p>
+      </div>
+    </section>
+
+    <section class="px-4 py-8 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl rounded-[2rem] border border-slate-200 bg-white p-10 shadow-soft">
+        <p class="text-lg leading-8 text-slate-700">
+          Cận thị học đường đang là vấn đề sức khỏe cộng đồng đáng lo ngại, khi tỷ lệ học sinh mắc cận thị tăng nhanh qua từng năm. Nhiều phụ huynh chỉ phát hiện con bị cận khi tình trạng đã tiến triển nặng, ảnh hưởng đến kết quả học tập và sinh hoạt của trẻ.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-slate-700">
+          Phòng Khám Mắt Cận Thị Học Đường Minh Phương ra đời để giải quyết đúng vấn đề đó — tập trung chuyên sâu vào tầm soát, theo dõi và kiểm soát tiến triển cận thị cho học sinh, đồng hành cùng phụ huynh trong suốt quá trình chăm sóc thị lực của con.
+        </p>
+      </div>
+    </section>
+
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="text-3xl font-semibold text-dark">Đội ngũ chuyên môn</h2>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <TeamCard name="ThS.BS Nguyễn Thùy Dung" title="Trưởng khoa Tổng Hợp, Bệnh viện Mắt Nghệ An" image="/images/team/placeholder-doctor.png" />
+          <TeamCard name="ThS.BS Võ Thị Thúy Hằng" title="Giảng viên Bộ môn Mắt, Trường Đại học Y khoa Vinh" image="/images/team/placeholder-doctor.png" />
+          <TeamCard name="Cử nhân khúc xạ Nguyễn Thị Hà Trang" title="Tốt nghiệp Đại học Y Hà Nội" image="/images/team/placeholder-doctor.png" />
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl rounded-[2rem] bg-bg-warm px-8 py-12 text-center">
+        <p class="text-xl leading-8 text-slate-700">Trở thành địa chỉ tin cậy hàng đầu tại Nghệ An về kiểm soát cận thị học đường, giúp học sinh có đôi mắt khỏe mạnh để tự tin học tập và phát triển toàn diện.</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ContactCTA />
+</BaseLayout>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import StatBlock from '../components/StatBlock.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { CLINIC } from '../data/clinic';
+---
+
+<BaseLayout title="Trang chủ" description="Phòng khám chuyên sâu về cận thị học đường tại Nghệ An, tư vấn Ortho-K, atropine và các giải pháp kiểm soát cận thị cho học sinh.">
+  <Header />
+  <main>
+    <section class="bg-bg-warm px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">{CLINIC.name.toUpperCase()}</p>
+          <h1 class="mt-4 max-w-2xl text-4xl font-semibold leading-tight text-dark sm:text-5xl">
+            Kiểm soát cận thị, <span class="italic text-primary">đồng hành</span> cùng con mỗi ngày.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg text-slate-700">
+            Chuyên sâu về cận thị học đường cho học sinh — kiểm tra thị lực, tư vấn Ortho-K, Atropine và các giải pháp kiểm soát cận thị an toàn, bởi đội ngũ bác sĩ chuyên khoa Mắt giàu kinh nghiệm.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={`tel:${CLINIC.phone}`} class="focus-ring rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:opacity-90">Gọi đặt lịch ngay</a>
+            <a href="#dich-vu" class="focus-ring rounded-full border border-dark px-6 py-3 font-semibold text-dark transition hover:border-primary hover:text-primary">Xem dịch vụ</a>
+          </div>
+        </div>
+        <div class="rounded-[2rem] border border-slate-200 bg-white/80 p-8 shadow-soft">
+          <svg viewBox="0 0 400 400" class="w-full" aria-hidden="true">
+            <circle cx="200" cy="200" r="140" fill="none" stroke="var(--color-primary)" stroke-width="18" opacity="0.25" />
+            <circle cx="200" cy="200" r="108" fill="none" stroke="var(--color-accent)" stroke-width="12" opacity="0.5" />
+            <circle cx="200" cy="200" r="76" fill="none" stroke="var(--color-primary)" stroke-width="10" />
+            <circle cx="200" cy="200" r="44" fill="none" stroke="var(--color-dark)" stroke-width="8" opacity="0.6" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="dich-vu" class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">DỊCH VỤ</p>
+        <h2 class="mt-3 text-3xl font-semibold text-dark sm:text-4xl">Chăm sóc thị lực học đường toàn diện</h2>
+        <p class="mt-4 max-w-3xl text-lg text-slate-600">Từ khám tổng quát đến các giải pháp kiểm soát cận thị chuyên sâu dành riêng cho học sinh.</p>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <ServiceCard number="01 — Kiểm tra mắt tổng quát" title="Kiểm tra mắt tổng quát" description="Kiểm tra thị lực, đo khúc xạ, tầm soát các bệnh lý về mắt định kỳ cho mọi lứa tuổi." />
+          <ServiceCard number="02 — Kiểm soát cận thị" title="Kiểm soát cận thị" description="Tư vấn và áp dụng Ortho-K, Atropine nồng độ thấp và các phương pháp khác giúp làm chậm tiến triển cận thị ở trẻ em." />
+          <ServiceCard number="03 — Kính mắt & kính áp tròng" title="Kính mắt & kính áp tròng" description="Đa dạng gọng kính, tròng kính chính hãng. Đo cắt kính theo đúng 6 bước tiêu chuẩn của Viện Thị giác Brien Holden – Úc." />
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl rounded-[2rem] bg-dark px-8 py-16 text-white shadow-soft">
+        <div class="text-center">
+          <h2 class="text-3xl font-semibold sm:text-4xl">Được tin tưởng bởi nhiều gia đình</h2>
+          <p class="mx-auto mt-4 max-w-3xl text-lg text-slate-300">Phòng Khám Mắt Cận Thị Học Đường Minh Phương đồng hành cùng các gia đình trong việc kiểm soát và bảo vệ thị lực, đặc biệt chú trọng đến sức khỏe mắt của học sinh.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <StatBlock value="10+" label="năm kinh nghiệm" />
+          <StatBlock value="2000+" label="khách hàng tin tưởng" />
+          <StatBlock value="7" label="ngày làm việc / tuần" />
+          <StatBlock value="6" label="bước đo cắt kính chuẩn quốc tế" />
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-24 sm:px-6 lg:px-8">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 rounded-[2rem] border border-slate-200 bg-bg-warm px-8 py-10 md:flex-row">
+        <p class="text-lg text-slate-700">Đặt lịch khám ngay hôm nay để bảo vệ đôi mắt của con với phương pháp phù hợp nhất.</p>
+        <a href={`tel:${CLINIC.phone}`} class="focus-ring text-3xl font-semibold text-primary hover:text-accent">{CLINIC.phoneDisplay}</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ContactCTA />
+</BaseLayout>

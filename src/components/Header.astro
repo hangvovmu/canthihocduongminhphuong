@@ -1,0 +1,35 @@
+---
+import { CLINIC } from '../data/clinic';
+const links = [
+  { href: '/', label: 'Dịch vụ' },
+  { href: '/gioi-thieu', label: 'Giới thiệu' },
+  { href: '/kien-thuc', label: 'Kiến thức' },
+  { href: '/lien-he', label: 'Liên hệ' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="focus-ring flex items-center gap-3">
+      <img src="/logo/minhphuong-logo.png" alt="Logo Minh Phương" class="h-10 w-auto" />
+      <span class="text-lg font-semibold text-dark">{CLINIC.name}</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex">
+      {links.map((link) => (
+        <a href={link.href} class="focus-ring text-sm font-medium text-dark transition hover:text-primary">
+          {link.label}
+        </a>
+      ))}
+      <a href={`tel:${CLINIC.phone}`} class="focus-ring rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90">
+        Gọi đặt lịch
+      </a>
+    </nav>
+
+    <button class="focus-ring inline-flex rounded-full border border-slate-300 p-2 md:hidden" aria-label="Mở menu điều hướng">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>

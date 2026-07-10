@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { CLINIC } from '../data/clinic';
+---
+
+<BaseLayout title="Liên hệ" description="Đặt lịch khám hoặc liên hệ tư vấn miễn phí cho con bạn ngay hôm nay.">
+  <Header />
+  <main>
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">LIÊN HỆ</p>
+        <h1 class="mt-4 max-w-3xl text-4xl font-semibold text-dark sm:text-5xl">Liên hệ với Minh Phương</h1>
+        <p class="mt-6 max-w-3xl text-lg text-slate-700">Đặt lịch khám hoặc liên hệ tư vấn miễn phí cho con bạn ngay hôm nay.</p>
+      </div>
+    </section>
+
+    <section class="px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div class="space-y-5">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h2 class="text-xl font-semibold text-dark">Địa chỉ</h2>
+            <p class="mt-2 text-slate-700">{CLINIC.address}</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h2 class="text-xl font-semibold text-dark">Hotline / Zalo</h2>
+            <a href={`tel:${CLINIC.phone}`} class="mt-2 block text-primary hover:text-accent">{CLINIC.phoneDisplay}</a>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h2 class="text-xl font-semibold text-dark">Giờ làm việc</h2>
+            <p class="mt-2 text-slate-700">{CLINIC.hours}</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h2 class="text-xl font-semibold text-dark">Bản đồ</h2>
+            <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6028.474902000037!2d105.683135!3d18.687107!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cfeaab6c8b11%3A0x3b8590dca1f331cc!2zUGjDsm5nIGtow6FtIG3huq90IC0gQ-G6rW4gdGjhu4sgaOG7jWMgxJHGsOG7nW5nIE1pbmggUGjGsMahbmc!5e1!3m2!1svi!2s!4v1783675780756!5m2!1svi!2s"
+                class="h-64 w-full"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Địa chỉ Phòng Khám Minh Phương trên Google Maps"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft">
+          <form id="contact-form" class="space-y-5" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="102b4e5f-7288-4804-a95b-b912afe7886d" />
+            <input type="hidden" name="subject" value="Liên hệ mới từ website Minh Phương" />
+            <div>
+              <label for="name" class="mb-2 block text-sm font-medium text-slate-700">Họ và tên</label>
+              <input id="name" name="name" required class="focus-ring w-full rounded-xl border border-slate-300 px-4 py-3" />
+            </div>
+            <div>
+              <label for="phone" class="mb-2 block text-sm font-medium text-slate-700">Số điện thoại</label>
+              <input id="phone" name="phone" type="tel" required class="focus-ring w-full rounded-xl border border-slate-300 px-4 py-3" />
+            </div>
+            <div>
+              <label for="class" class="mb-2 block text-sm font-medium text-slate-700">Con bạn sinh năm mấy?</label>
+              <input id="class" name="class" class="focus-ring w-full rounded-xl border border-slate-300 px-4 py-3" />
+            </div>
+            <div>
+              <label for="message" class="mb-2 block text-sm font-medium text-slate-700">Nội dung cần tư vấn</label>
+              <textarea id="message" name="message" rows="5" required class="focus-ring w-full rounded-xl border border-slate-300 px-4 py-3"></textarea>
+            </div>
+            <button type="submit" class="focus-ring rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90">Gửi thông tin, chúng tôi sẽ liên hệ lại</button>
+            <p id="form-status" class="text-sm text-slate-600"></p>
+          </form>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={`tel:${CLINIC.phone}`} class="focus-ring rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white">Gọi ngay</a>
+            <a href={CLINIC.zaloUrl} target="_blank" rel="noreferrer" class="focus-ring rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white">Zalo</a>
+            <a href={CLINIC.facebookUrl} target="_blank" rel="noreferrer" class="focus-ring rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ContactCTA />
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    if (form && status) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        status.textContent = 'Đang gửi thông tin...';
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
+          });
+          const result = await response.json();
+          if (result.success) {
+            status.textContent = 'Cảm ơn bạn! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.';
+            form.reset();
+          } else {
+            status.textContent = 'Đã xảy ra lỗi khi gửi. Vui lòng gọi trực tiếp để được hỗ trợ.';
+          }
+        } catch (error) {
+          status.textContent = 'Đã xảy ra lỗi khi gửi. Vui lòng gọi trực tiếp để được hỗ trợ.';
+        }
+      });
+    }
+  </script>
+</BaseLayout>
