@@ -1,5 +1,5 @@
 export const CLINIC = {
-  name: 'Phòng Khám Mắt Cận Thị Học Đường Minh Phương',
+  name: 'PHÒNG KHÁM MẮT CẬN THỊ HỌC ĐƯỜNG MINH PHƯƠNG',
   address: '95 Phùng Chí Kiên, Phường Vinh Phú, Nghệ An',
   phone: '0911839678',
   phoneDisplay: '0911.839.678',

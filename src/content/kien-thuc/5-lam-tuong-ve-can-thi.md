@@ -5,7 +5,7 @@ category: "Hỏi đáp phụ huynh"
 pubDate: 2026-07-10
 ---
 
-Có những quan niệm về cận thị tưởng đúng nhưng thực tế lại khiến độ cận của trẻ tăng nhanh hơn. Phòng Khám Mắt Cận Thị Học Đường Minh Phương xin chia sẻ 5 lầm tưởng phổ biến nhất mà phụ huynh thường gặp phải.
+Có những quan niệm về cận thị tưởng đúng nhưng thực tế lại khiến độ cận của trẻ tăng nhanh hơn. PHÒNG KHÁM MẮT CẬN THỊ HỌC ĐƯỜNG MINH PHƯƠNG xin chia sẻ 5 lầm tưởng phổ biến nhất mà phụ huynh thường gặp phải.
 
 ## 1. Lầm tưởng: Đeo kính nhiều sẽ khiến mắt bị phụ thuộc, nên hạn chế đeo kính
 

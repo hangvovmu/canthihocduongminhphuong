@@ -7,7 +7,7 @@ pubDate: 2026-07-10
 
 Cận thị không "đứng yên" một chỗ theo thời gian. Tốc độ tăng độ nhanh hay chậm phụ thuộc rất nhiều vào thói quen sinh hoạt và học tập hằng ngày của trẻ. Nếu không được kiểm soát tốt, độ cận tăng nhanh có thể làm tăng nguy cơ gặp các biến chứng nguy hiểm về sau.
 
-Dưới đây là 6 giải pháp Phòng Khám Mắt Cận Thị Học Đường Minh Phương gợi ý để cha mẹ đồng hành cùng con kiểm soát tiến triển cận thị hiệu quả hơn.
+Dưới đây là 6 giải pháp PHÒNG KHÁM MẮT CẬN THỊ HỌC ĐƯỜNG MINH PHƯƠNG gợi ý để cha mẹ đồng hành cùng con kiểm soát tiến triển cận thị hiệu quả hơn.
 
 ## 1. Đeo kính đúng số, đúng tâm
 
