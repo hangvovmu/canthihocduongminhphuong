@@ -1,0 +1,25 @@
+Cách làm ngay — 3 bước trong VS Code
+Bước 1: Khởi tạo Git cho project
+Mở terminal trong VS Code (Ctrl + ``  ``), gõ:
+bash
+git init
+Bước 2: Commit phiên bản hiện tại (tạo "snapshot" backup)
+bash
+git add .
+git commit -m "Phiên bản ổn định trước khi chỉnh sửa"
+Xong. Phiên bản này đã được lưu lại vĩnh viễn.
+Bước 3: Tiếp tục chỉnh sửa thoải mái
+Nếu chỉnh xong muốn lưu tiếp một snapshot mới:
+bash
+git add .
+git commit -m "Mô tả thay đổi bạn vừa làm"
+
+Khi cần quay về phiên bản cũ
+bash
+git log --oneline        # xem danh sách các phiên bản đã lưu
+git checkout <commit-id> # quay về phiên bản cụ thể
+
+
+CODEGRAPH
+
+codegraph init -i
