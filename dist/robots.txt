@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://canthihocduongminhphuong.com/sitemap-index.xml
